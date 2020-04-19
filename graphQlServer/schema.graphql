@@ -1,0 +1,37 @@
+type Query  {
+  employees:[Employee]
+  students:[Student]
+}
+
+type Student {
+   id:ID!
+   firstName:String
+   lastName:String
+   fullName:String 
+}
+
+type Employee {
+   id:ID!
+   name:String
+   gender:String
+   dob:String
+   specialisation:String
+   email:String
+   phone_num:String
+   address:String
+   profile_pic:String
+}
+
+type Mutation {
+   createEmployee(id:ID,name:String,gender:String,dob:String,specialisation:String,
+   email:String, phone_num:String, address:String, profile_pic:String):String
+   
+   deleteEmployee(id:ID):String
+
+   updateEmployee(id:ID,name:String,gender:String,dob:String,specialisation:String,
+   email:String, phone_num:String, address:String, profile_pic:String):String
+
+   createStudent(collegeId:ID,firstName:String,lastName:String):String
+   deleteStudent(id:ID):String
+   updateStudent(id:ID,firstName:String,lastName:String):String
+}
